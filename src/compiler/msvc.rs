@@ -507,7 +507,11 @@ pub fn parse_arguments(
                     Argument::Raw(ref val) => {
                         if input_arg.is_some() {
                             // Can't cache compilations with multiple inputs.
-                            cannot_cache!("multiple input files");
+                            let s0 = val.clone().into_string().unwrap();
+                            let s1_o: std::option::Option<OsString> = input_arg.clone();
+                            let s1 = s1_o.unwrap().into_string().unwrap();
+                            let s = format!("multiple input values: {}, {}",s0,s1);
+                            cannot_cache!(Box::leak(s.into_boxed_str()));
                         }
                         input_arg = Some(val.clone());
                     }
