@@ -396,6 +396,7 @@ msvc_args!(static ARGS: [ArgInfo<ArgData>; _] = [
     msvc_take_arg!("experimental:preprocessor", OsString, Concatenated, PassThroughWithSuffix),
     msvc_take_arg!("external:I", PathBuf, CanBeSeparated, ExternalIncludePath),
     msvc_take_arg!("external:", OsString, Concatenated, PassThroughWithSuffix),
+    msvc_take_arg!("experimental:", OsString, Concatenated, PassThroughWithSuffix),
     msvc_take_arg!("favor:", OsString, Separated, PassThroughWithSuffix),
     msvc_take_arg!("fp:", OsString, Separated, PassThroughWithSuffix),
     msvc_take_arg!("fsanitize-blacklist", PathBuf, Concatenated('='), ExtraHashFile),
