@@ -391,12 +391,12 @@ msvc_args!(static ARGS: [ArgInfo<ArgData>; _] = [
     msvc_take_arg!("doc", PathBuf, Concatenated, TooHardPath), // Creates an .xdc file.
     msvc_take_arg!("errorReport:", OsString, Concatenated, PassThroughWithSuffix), // Deprecated.
     msvc_take_arg!("execution-charset:", OsString, Concatenated, PassThroughWithSuffix),
+    msvc_flag!("experimental:external", PassThrough), // Let this pass through
     msvc_flag!("experimental:module", TooHardFlag),
     msvc_flag!("experimental:module-", PassThrough), // Explicitly disabled modules.
     msvc_take_arg!("experimental:preprocessor", OsString, Concatenated, PassThroughWithSuffix),
-    msvc_take_arg!("external:I", PathBuf, CanBeSeparated, ExternalIncludePath),
     msvc_take_arg!("external:", OsString, Concatenated, PassThroughWithSuffix),
-    msvc_take_arg!("experimental:", OsString, Concatenated, PassThroughWithSuffix),
+    msvc_take_arg!("external:I", PathBuf, CanBeSeparated, ExternalIncludePath),
     msvc_take_arg!("favor:", OsString, Separated, PassThroughWithSuffix),
     msvc_take_arg!("fp:", OsString, Separated, PassThroughWithSuffix),
     msvc_take_arg!("fsanitize-blacklist", PathBuf, Concatenated('='), ExtraHashFile),
