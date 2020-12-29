@@ -395,7 +395,12 @@ msvc_args!(static ARGS: [ArgInfo<ArgData>; _] = [
     msvc_flag!("experimental:module", TooHardFlag),
     msvc_flag!("experimental:module-", PassThrough), // Explicitly disabled modules.
     msvc_take_arg!("experimental:preprocessor", OsString, Concatenated, PassThroughWithSuffix),
-    msvc_take_arg!("external", OsString, Concatenated(':'), PassThroughWithSuffix),
+    msvc_flag!("external:anglebrackets", PassThrough),
+    msvc_flag!("external:W0", PassThrough),
+    msvc_flag!("external:W1", PassThrough),
+    msvc_flag!("external:W2", PassThrough),
+    msvc_flag!("external:W3", PassThrough),
+    msvc_flag!("external:W4", PassThrough),
     msvc_take_arg!("external:I", PathBuf, CanBeSeparated, ExternalIncludePath),
     msvc_take_arg!("favor:", OsString, Separated, PassThroughWithSuffix),
     msvc_take_arg!("fp:", OsString, Separated, PassThroughWithSuffix),
